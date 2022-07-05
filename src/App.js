@@ -1,11 +1,22 @@
 import './global.css';
-import PageTitle from './components/PageTitle';
-import ContactList from './components/ContactList';
+
+import NavigationBar from './components/NavigationBar';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 function App() {
   return (
-    <div className="bg-gray-400 container mx-auto flex flex-col items-center justify-center min-h-screen">
-      <PageTitle title="Favaroite Contacts" />
-      <ContactList />
+    <div>
+      <NavigationBar />
+      {/* decalre my routes (pages) */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </div>
   );
 }
